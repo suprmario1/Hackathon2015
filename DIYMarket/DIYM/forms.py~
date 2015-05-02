@@ -19,7 +19,8 @@ class DIYUserForm(ModleForm):
 class ItemServiceForm(ModelForm):
     class Meta:
         model = ItemService
-        fields = ['image','details']
+        fields = ['image','details',]
 
 class OfferForm(forms.Form):
     pass
+
