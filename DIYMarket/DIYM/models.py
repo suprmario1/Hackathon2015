@@ -9,20 +9,20 @@ class DIYUser(models.Model):
         return self.user.username 
 
 class ItemService(models.Model):
-     owner = models.ForeignKey('DIYUser')
-     details = models.TextField()
+    owner = models.ForeignKey('DIYUser')
+    Name = models.CharField(max_length = 20)
+    details = models.TextField()
+    date_added = models.DateTimeField()#date added into DB
 
 
 class Offer(models.Model):
-     IS = models.ForeignKey('ItemService')
-     user = models.ForeignKey('DIYUser')
+    IS = models.ForeignKey('ItemService')
+    user = models.ForeignKey('DIYUser')
 
 
- class Address(models.Model):
-     state = models.CharField(max_length=50)
-     city = models.CharField(max_length=50)
-     zipcode = models.IntegerField(max_length=50)
-     street = models.CharField(max_length=50)
-     aptnumber = models.IntegerField(max_length=50)
-    
-
+class Address(models.Model):
+    state = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    zipcode = models.IntegerField(max_length=50)
+    street = models.CharField(max_length=50)
+    aptnumber = models.IntegerField(max_length=50)
